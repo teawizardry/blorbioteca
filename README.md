@@ -33,6 +33,7 @@ This is a new project for me, so there's a lot to add!
 - Add more theme customization
 - Improve theming of homepage
 - Add character relations map / family tree
+- Add hosting tutorial and demo site
 
 ## Feedback and Suggestions
 If you have a suggestion or encounter a bug, open a issue on this repository!

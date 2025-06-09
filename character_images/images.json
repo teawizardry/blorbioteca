@@ -2,18 +2,18 @@
   {
     "url": "/character_images/blorbo-bleebus/image.png",
     "alt": "alt text",
-    "character": "blorbo-bleebus",
+    "character": "blorbo",
     "description": "This is a great image of Blorbo Bleebus!",
     "spoiler": ""
   },
   {
-  {
     "url": "/character_images/blorbo-bleebus/image.png",
     "alt": "alt text",
-    "character": "blorbo-bleebus",
+    "character": "blorbo",
     "description": "This image will be hidden until clicked on!",
     "spoiler": "spoiler"
   },
+  {
     "url": "/character_images/blorbo-bleebus/image.png",
     "alt": "alt text",
     "character": "jimmy",

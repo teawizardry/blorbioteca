@@ -1,0 +1,33 @@
+<h1>Blorbioteca</h1>
+<blockquote>
+<p><em>An Eleventy based character repository</em></p>
+</blockquote>
+<p>The goal of this project is to create an easy to use static site generator for character sheets. It's inspired by sites like <a href="https://refsheet.net/" target="_blank" rel="noopener">Refsheet</a> and <a href="https://toyhou.se/" target="_blank" rel="noopener">Toyhouse</a> and my own desire for a self-hosted option.</p>
+<h2>Installation</h2>
+<p>First, make sure you have <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node.js</a> installed. You can check this by running <code>node --version</code>. It is also advisable to have a look at the <a href="https://www.11ty.dev/" target="_blank" rel="noopener">Eleventy docs</a> to familiarize yourself with the workflow.</p>
+<ol>
+<li>Clone this repository via <code>git clone https://github.com/teawizardry/blorbioteca</code></li>
+<li>Install dependencies via <code>npm install</code></li>
+<li>Build with <code>gulp --tasks &amp;&amp; npx @11ty/eleventy</code> or serve with <code>gulp --tasks &amp;&amp; npx @11ty/eleventy --serve</code></li>
+</ol>
+<p>Now you can take a look at the template output! All character information is stored under the <code>characters</code> folder in markdown files. Images are stored in <code>character_images</code>. Check out <code>characters/template.md</code> for available css and sidebar options!</p>
+<p>Host the site either via self-hosting or by uploading the <code>_site/</code> output folder to some place like <a href="https://neocities.org/" target="_blank" rel="noopener">neocities.</a></p>
+<h2>Features</h2>
+<h3>Image Gallery</h3>
+<p>To include an image in a character's image gallery, add the image path to the <code>character_images/images.json</code> file. Here you can also specify the image's description and whether or not it should be blacked out until clicked on (important to comply with certain art trade event rules). Images are optimized for the web automagically via Eleventy's Image plugin.</p>
+<h3>Fonts</h3>
+<p>To include custom fonts, place the font files in <code>assets/fonts/</code>. The command <code>gulp --tasks</code> will automatically optimize included fonts for the web and generate the css font headers for you. You can then specify these fonts per page via the front matter. Only <code>ttf</code> fonts are currently supported. Default font is <a href="https://github.com/source-foundry/Hack_" target="_blank" rel="noopener">Hack.</a></p>
+<h3>Custom Colors</h3>
+<p>You can specify different colors per page in the front matter. Default colors based on <a href="https://github.com/rebelot/kanagawa.nvim" target="_blank" rel="noopener">Kanagawa</a></p>
+<h3>Character Index Page</h3>
+<p>The homepage lists all characters in alphabetical order.</p>
+<h2>Future Work</h2>
+<p>This is a new project for me, so there's a lot to add!</p>
+<ul>
+<li>Improve accessibility (especially for images)</li>
+<li>Add more theme customization</li>
+<li>Improve theming of homepage</li>
+<li>Add character relations map / family tree</li>
+</ul>
+<h2>Feedback and Suggestions</h2>
+<p>If you have a suggestion or encounter a bug, open a issue on this repository!</p>

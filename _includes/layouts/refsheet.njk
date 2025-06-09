@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ name }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/assets/bundle.css">
+<style>
+{% if font %}
+	.grid {font-family: {{ font }};}
+{% else %}
+	.grid {font-family: 'Hacknerdfont';}
+{% endif %}
+
+{% if textColor %}
+	p, td {color: {{ textColor }};}
+{% endif %}
+
+{% if headingColor %}
+	h1, h2, h3, h4, summary {color: {{ headingColor }};}
+{% endif %}
+
+{% if strongColor %}
+	strong, td:nth-child(1) {color: {{ strongColor }};}
+{% endif %}
+
+{% if backgroundColor %}
+	* {background-color: {{ backgroundColor }};}
+{% endif %}
+</style>
+</head>
+<body>
+
+<div class="grid">
+	<div class="content">
+		<div class="name">
+			<h1>{{ name }}</h1>
+		</div>
+		
+		<div class="description">
+			{{ content | safe }}
+		</div>
+
+		{% block content %}
+		<div class="gallery">
+		{% for image in images %}
+			{% if image.character == page.fileSlug %}
+				<div class="image {{ image.spoiler }}">
+					<img src="{{ image.url }}" tabindex="-1" alt="{{ image.alt }}">
+					<p class="image-description">{{ image.description }}</p>
+				</div>
+			{% endif %}
+		{% endfor %}
+		</div>
+		{% endblock %}
+	</div>
+
+	<div class="sidebar">
+		{% if pfp %}
+			<div class="item">
+				<img src="{{ pfp }}" alt="">
+				{% if pfpDescription %}
+					<p>{{ pfpDescription }}</p>
+				{% endif %}
+			</div>
+		{% endif %}
+
+		{% if species %}
+			<div class="item">
+				<h3>Species</h3>
+				<p>{{ species | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if age %}
+			<div class="item">
+				<h3>Age</h3>
+				<p>{{ age | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if birthday %}
+			<div class="item">
+				<h3>Birthday</h3>
+				<p>{{ birthday | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if height %}
+			<div class="item">
+				<h3>Height</h3>
+				<p>{{ height | safe | replace(",", "<br />")}}</p>
+			</div>
+		{% endif %}
+
+		{% if weight %}
+			<div class="item">
+				<h3>Weight</h3>
+				<p>{{ weight | safe | replace(",", "<br />")}}</p>
+			</div>
+		{% endif %}
+
+		{% if bodyType %}
+			<div class="item">
+				<h3>Body Type</h3>
+				<p>{{ bodyType | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if gender %}
+			<div class="item">
+				<h3>Gender</h3>
+				<p>{{ gender | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if sexuality %}
+			<div class="item">
+				<h3>Sexuality</h3>
+				<p>{{ sexuality | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if likes %}
+			<div class="item">
+				<h3>Likes</h3>
+				<p>{{ likes | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+
+		{% if dislikes %}
+			<div class="item">
+				<h3>Dislikes</h3>
+				<p>{{ dislikes | safe | replace(",", "<br />") }}</p>
+			</div>
+		{% endif %}
+	</div>
+
+
+</div>
+</body>
+</html>

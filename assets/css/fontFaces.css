@@ -1,0 +1,108 @@
+@font-face {
+	font-family: 'Hacknerdfont';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFont-Bold.woff2") format("woff2"),
+	url("fonts/HackNerdFont-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfont Bolditalic';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFont-BoldItalic.woff2") format("woff2"),
+	url("fonts/HackNerdFont-BoldItalic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfont';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFont-Italic.woff2") format("woff2"),
+	url("fonts/HackNerdFont-Italic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfont';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFont-Regular.woff2") format("woff2"),
+	url("fonts/HackNerdFont-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontmono';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontMono-Bold.woff2") format("woff2"),
+	url("fonts/HackNerdFontMono-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontmono Bolditalic';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontMono-BoldItalic.woff2") format("woff2"),
+	url("fonts/HackNerdFontMono-BoldItalic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontmono';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontMono-Italic.woff2") format("woff2"),
+	url("fonts/HackNerdFontMono-Italic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontmono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontMono-Regular.woff2") format("woff2"),
+	url("fonts/HackNerdFontMono-Regular.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontpropo';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontPropo-Bold.woff2") format("woff2"),
+	url("fonts/HackNerdFontPropo-Bold.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontpropo Bolditalic';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontPropo-BoldItalic.woff2") format("woff2"),
+	url("fonts/HackNerdFontPropo-BoldItalic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontpropo';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontPropo-Italic.woff2") format("woff2"),
+	url("fonts/HackNerdFontPropo-Italic.woff") format("woff");
+}
+@font-face {
+	font-family: 'Hacknerdfontpropo';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+	url("fonts/HackNerdFontPropo-Regular.woff2") format("woff2"),
+	url("fonts/HackNerdFontPropo-Regular.woff") format("woff");
+}

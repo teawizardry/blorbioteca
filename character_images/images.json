@@ -1,0 +1,23 @@
+[
+  {
+    "url": "/character_images/blorbo-bleebus/image.png",
+    "alt": "alt text",
+    "character": "blorbo-bleebus",
+    "description": "This is a great image of Blorbo Bleebus!",
+    "spoiler": ""
+  },
+  {
+  {
+    "url": "/character_images/blorbo-bleebus/image.png",
+    "alt": "alt text",
+    "character": "blorbo-bleebus",
+    "description": "This image will be hidden until clicked on!",
+    "spoiler": "spoiler"
+  },
+    "url": "/character_images/blorbo-bleebus/image.png",
+    "alt": "alt text",
+    "character": "jimmy",
+    "description": "This picture won't be shown because it's not Blorbo Bleebus!",
+    "spoiler": ""
+  }
+]

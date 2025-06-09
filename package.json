@@ -1,0 +1,41 @@
+{
+	"name": "blorbioteca",
+	"version": "1.0.0",
+	"keywords": [],
+	"scripts": {
+		"build": "gulp --tasks && npx @11ty/eleventy",
+		"start": "gulp --tasks && npx @11ty/eleventy --serve",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy"
+	},
+	"author": "teawizardry",
+	"license": "GPL-3.0-only",
+	"description": "11ty based character repository",
+	"type": "module",
+	"dependencies": {
+		"@11ty/eleventy": "^3.1.0",
+		"@11ty/eleventy-img": "^6.0.4",
+		"@vscode/markdown-it-katex": "^1.1.1",
+		"fontkit": "^2.0.4",
+		"gulp-fontfacegen": "github:gtbmvp/gulp-fontfacegen",
+		"i": "^0.3.7",
+		"markdown-it": "^14.1.0",
+		"markdown-it-abbr": "^2.0.0",
+		"markdown-it-container": "^4.0.0",
+		"markdown-it-deflist": "^3.0.0",
+		"markdown-it-emoji": "^3.0.0",
+		"markdown-it-footnote": "^4.0.0",
+		"markdown-it-ins": "^4.0.0",
+		"markdown-it-link-attributes": "^4.0.1",
+		"markdown-it-mark": "^4.0.0",
+		"markdown-it-multimd-table": "^4.2.3",
+		"markdown-it-sub": "^2.0.0",
+		"markdown-it-sup": "^2.0.0",
+		"markdown-it-task-lists": "^2.1.1"
+	},
+	"devDependencies": {
+		"gulp": "^5.0.0",
+		"gulp-ttf2woff": "^2.0.0",
+		"markdown-it-eleventy-img": "^0.10.2",
+		"tslib": "^2.8.1"
+	}
+}

@@ -1,0 +1,9 @@
+{% extends "two_factor/_base.html" %}
+
+{% block content %}
+  <div class="twofa-custom-message">
+    <h2>Enable Two-Factor Authentication</h2>
+    <p>Two-Factor Authentication (2FA) is a security feature that mitigates the risk of your account being compromised. Requiring a second form of authentication via a code or security key means that even if your password is compromised, attackers may not be able to access your account. Even though this site poses low risk as it contains little identifying information, other art sites have exploited, like <a href='https://artfight.net/news/99.important-security-announcement'>Art Fight in 2025.</a></p>
+  </div>
+  {{ block.super }}
+{% endblock %}

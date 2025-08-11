@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if invalid_username %}
+    <h1>Invalid username.</h1>
+  {% elif profile_user %}
+    <h1>Profile for {{ profile_user.username }}</h1>
+    <p>User ID: {{ profile_user.id }}</p>
+    {% if user.is_authenticated %}
+      {% if user.id == profile_user.id %}
+        <p>Email: {{ profile_user.email }}</p>
+        <p>This is your profile while logged in.</p>
+        <a href="{% url 'edit-profile' %}">Edit your profile</a>
+      {% else %}
+        <p>Email: (hidden)</p>
+        <p>You are viewing another user's profile.</p>
+      {% endif %}
+    {% else %}
+      <p>Email: (hidden)</p>
+      <p>You must be logged in to see more information.</p>
+    {% endif %}
+  {% else %}
+    <h1>User not found.</h1>
+  {% endif %}
+{% endblock %}

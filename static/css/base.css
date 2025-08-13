@@ -1,0 +1,348 @@
+/* 
+    Blorbioteca is a free and open source character and world repository.
+    Copyright (C) 2025 Hannah Kirkland
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://www.nerdfonts.com/assets/css/webfont.css');
+
+/* 
+    Color schemes are based on Kanagawa Dragon and Lotus. 
+    https://github.com/rebelot/kanagawa.nvim 
+*/
+.theme-dark {
+    --bg-primary: #181616;
+    --bg-secondary: #282727;
+    --bg-tertiary: #393836;
+    --bg-float: #0d0c0c;
+    --fg-primary: #c5c9c5;
+    --fg-secondary: #C8C093;
+    --fg-dim: #737c73;
+    --accent-blue: #8ba4b0;
+    --accent-purple: #8992a7;
+    --accent-red: #c4746e;
+    --accent-green: #8a9a7b;
+    --accent-yellow: #c4b28a;
+    --accent-orange: #b6927b;
+    --accent-teal: #8ea4a2;
+    --menu-bg: #625e5a;
+    --button-bg: #223249;
+    --button-hover: #2D4F67;
+}
+
+.theme-light {
+    --bg-primary: #f2ecbc;
+    --bg-secondary: #e7dba0;
+    --bg-tertiary: #e4d794;
+    --bg-float: #d5cea3;
+    --fg-primary: #545464;
+    --fg-secondary: #43436c;
+    --fg-dim: #8a8980;
+    --accent-blue: #4d699b;
+    --accent-purple: #624c83;
+    --accent-red: #c84053;
+    --accent-green: #6f894e;
+    --accent-yellow: #77713f;
+    --accent-orange: #cc6d00;
+    --accent-teal: #597b75;
+    --menu-bg: #c9cbd1;
+    --button-bg: #b5cbd2;
+    --button-hover: #9fb5c9;
+}
+
+html {
+    background-color: var(--bg-primary);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+}
+
+main {
+    min-height: fit-content;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+footer {
+    background-color: var(--bg-secondary);
+    color: var(--fg-secondary);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+/* home screen stuff */
+#home-buttons {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#home-buttons form {
+    margin-bottom: 0px;
+    padding: 0px;
+    border: hidden;
+}
+
+#home-blurb {
+    color: var(--fg-secondary);
+    text-align: center;
+}
+
+/* menu */
+.menu {
+    background-color: var(--menu-bg);
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* hide default form border */
+.menu form {
+    margin-bottom: 0px;
+    padding: 0px;
+    border: hidden;
+}
+
+/* buttons */
+button{
+    background-color: var(--button-bg);
+    color: var(--fg-primary);
+    padding: 8px 16px;
+    text-decoration: none;
+    border: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    color: var(--fg-primary);
+}
+
+/* forms and input boxes */
+form {
+    margin-bottom: 20px;
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--bg-tertiary);
+}
+
+form table {
+    border: hidden;
+    margin-bottom: 20px;
+}
+
+form td, form th {
+    border: hidden;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 10px 0;
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--bg-float);
+    color: var(--fg-primary);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(126, 156, 216, 0.2);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--fg-dim);
+}
+
+/* links */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-purple);
+    text-decoration: underline;
+}
+
+/* code and preformatted text */
+code, pre {
+    background-color: var(--bg-float);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+code {
+    padding: 2px 6px;
+    color: var(--accent-orange);
+}
+
+pre {
+    padding: 12px;
+    overflow-x: auto;
+    color: var(--fg-secondary);
+}
+
+/* tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    border: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+th {
+    background-color: var(--bg-tertiary);
+    color: var(--fg-primary);
+    font-weight: 600;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* errors */
+.errorlist {
+    color: var(--accent-red);
+    list-style-type: None;
+    text-align: center;
+    margin: 0;
+    padding: 15px 0px 0px 0px;
+}
+
+/* faqs */
+.faqs{
+    padding: 10px 0px 10px 0px;
+}
+
+.faqs summary{
+    background-color: var(--accent-purple);
+    color: var(--bg-primary);
+    padding: 10px;
+    border-radius: 8px;
+    border: hidden;
+}
+
+/* profile */
+#name {
+    color: var(--accent-purple);
+    margin-bottom: 0px;
+    font-weight: bolder;
+}
+
+#username {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: large;
+    font-weight: lighter;
+}
+
+#pronouns {
+    margin-top: 5px;
+    font-size: medium;
+    font-weight: lighter;   
+}
+
+/* name and edit button */
+.name_header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.name_header h1 {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.inline-edit-form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.inline-edit-form button {
+    font-size: 0.8em;
+    padding: 6px 12px;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sidebar_container {
+    float: left;
+    flex: 1;
+}
+
+.sidebar_container th {
+    text-align: center;
+}
+
+.profile_container {
+    float: right;
+    flex: 4;
+}

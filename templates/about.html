@@ -1,0 +1,83 @@
+<!--
+  Blorbioteca is a free and open source character and world repository.
+  Copyright (C) 2025 Hannah Kirkland
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+{% extends 'base.html' %}
+
+{% block title %}Blorbioteca{% endblock %}
+
+{% block content %}
+
+<main>
+Blorbioteca is a free and open source character and world repository. 
+
+<details open class='faqs'>
+    <summary><strong>What's a character / world repository?</strong></summary>
+    <div>
+        <p>A character / world repository lets artists organize details and art for their original characters and settings. Typically this includes basic details like name and species, more detailed information like backstory, and artwork.</p>
+    </div>
+</details>
+
+<details open class='faqs'>
+    <summary><strong>What does free and open source mean?</strong></summary>
+    <div>
+        <p>Free software isn't about price, it's about your ability to use, modify, and share software. While non-free software attempts to restrict modifications and how it's used, free software encourages the user to use, alter, and share the software. Open source means that the source code for this software is freely available.</p>
+        <p>This means if you want to create your own version of Blorbioteca or change parts of the code to suit your needs, you can!</p>
+        <p>Blorbioteca's source code is hosted on <a href=''>GitHub</a> and licensed under version 3 of the <a href='https://www.gnu.org/licenses/gpl-3.0.en.html'>GNU General Public License.</a> This license allows for modification and distribution of software, with the following stipulations:</p>
+        <ul>
+            <li>All shared versions of the software, modified or not, must be licensed under the GPLv3</li>
+            <li>Modified versions should be clearly indicated as such</li>
+            <li>All shared versions of the software must make the source code available to the user.</li>
+        </ul>
+    </div>
+</details>
+
+<details open class='faqs'>
+    <summary><strong>How can I contribute to Blorbioteca?</strong></summary>
+    <div>
+        <p>If you want to help contribute to the website's code base, check out our <a href=''>GitHub.</a> Bugs and errors should also be opened as an issue on the GitHub. If you have feedback or suggesstions, use the contact page.</p>
+    </div>
+</details>
+
+<details open class='faqs'>
+    <summary><strong>Terms and Conditions</strong></summary>
+    <div>
+        <p>Blorbioteca is intended for human made original characters and settings. As such, the following is not allowed on the site:</p>
+        <ul>
+            <li>Art and text produced with generative AI</li>
+            <li>Character sheets of real people</li>
+            <li>Art and content that glorifies any form of bigotry, including but not limited to racism (including nazism), sexism, homophobia, transphobia, religious discrimination, and violence against animals and children</li>
+        </ul>
+        <p>To keep the site safe and enjoyable for all, we require users to properly tag artwork and character / world sheets. Generally, more detailed tagging is better, but only a few categories are required to be tagged. For artwork, any visual presence of the following requires tagging. For text based content, detailed description of any of the following requires tagging. Repeated failure to properly tag the following may result in your account being frozen or terminated:</p>
+        <ul>
+            <li><strong>Light nudity -</strong> artwork where nipples are visible</li>
+            <li><strong>Full nudity -</strong> artwork where genitalia is visible</li>
+            <li><strong>Sexual content -</strong> depictions or descriptions of sexual scenes</li>
+            <li><strong>Body horror -</strong> unnatural distortions to the body</li>
+            <li><strong>Gore -</strong> visible guts, gratuitous amounts of blood, nail / eye / teeth trauma, cannibalism, and pregnancy complications</li>
+            <li><strong>Self harm -</strong> violence against oneself</li>
+            <li><strong>Child harm -</strong> violence against children</li>
+            <li><strong>Animal harm -</strong> violence against animals</li>
+            <li><strong>Drug use -</strong> visible insobriety, pills, syringes, etc.
+            <li><strong>Eye strain -</strong> images containing very saturated / bright / neon colors, strobing / flashing lights, or quick glitching animations</li>
+            <li><strong>Trypophobia -</strong> multiple holes close together</li>
+            <li><strong>Arachnophobia / entomophobia -</strong> detailed / realistic drawings of bugs, swarms of bugs, unnaturally large bugs, etc.</li>
+    </div>
+</details>
+</main>
+{% endblock %}
+

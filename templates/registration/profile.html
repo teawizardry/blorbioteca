@@ -1,24 +1,85 @@
-{% extends "base.html" %}
+<!--
+  Blorbioteca is a free and open source character and world repository.
+  Copyright (C) 2025 Hannah Kirkland
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+{% extends 'base.html' %}
 
 {% block content %}
-  {% if invalid_username %}
-    <h1>Invalid username.</h1>
-  {% elif profile_user %}
-    <h1>Profile for {{ profile_user.username }}</h1>
-    <p>User ID: {{ profile_user.id }}</p>
-    {% if user.is_authenticated %}
-      {% if user.id == profile_user.id %}
-        <p>Email: {{ profile_user.email }}</p>
-        <p>This is your profile while logged in.</p>
-        <a href="{% url 'edit-profile' %}">Edit your profile</a>
-      {% else %}
-        <p>Email: (hidden)</p>
-        <p>You are viewing another user's profile.</p>
-      {% endif %}
-    {% else %}
-      <p>Email: (hidden)</p>
-      <p>You must be logged in to see more information.</p>
-    {% endif %}
+  {% if profile_user %}
+  <div class='profile'>
+    <div class='sidebar_container'>
+    {% comment %} pfp image here {% endcomment %}
+      <table>
+        <tr>
+          <th>Username</th>
+          <td>{{ profile_user.user.username }}</td>
+        </tr>
+        {% if profile_user.pronouns %}
+        <tr>
+          <th>Pronouns</th>
+          <td>{{ profile_user.pronouns }}</td>
+        </tr>
+        {% endif %}
+        {% for social in profile_user.social_links %}
+          <tr>
+            {% if social.label %}
+            <th title={{ social.label }}>{{ social.label }}</th>
+            {% else %}
+            <th title={{ social.type|title }}>
+              {% if social.type == 'bluesky' %}
+              <i class='nf nf-fae-butterfly'></i>
+              {% elif social.type == 'instagram' %}
+              <i class='nf nf-fa-instagram'></i>
+              {% elif social.type == 'tumblr' %}
+              <i class='nf nf-fa-square_tumblr'></i>
+              {% elif social.type == 'twitter' %}
+              <i class='nf nf-cod-twitter'></i>
+              {% elif social.type == 'youtube' %}
+              <i class='nf nf-fa-youtube'></i>
+              {% else %}
+              <i class='nf nf-fa-globe'></i>
+              {% endif %}
+            </th>
+            {% endif %}
+            <td><a target='_blank' rel='noopener noreferrer' href={{ social.link }}>{{ social.link }}</a></td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class='profile_container'>
+      <div class='name_info'>
+        <div class='name_header'>
+          <h1 id='name'><strong>{{ profile_user.name }}</strong></h1>
+          {% if user.is_authenticated %}
+            {% if user.id == profile_user.user.id %}
+              <form action={% url 'edit-profile' %} class='inline-edit-form'>
+                  <button type='submit'>Edit</button>
+              </form>
+            {% endif %}
+          {% endif %}
+        </div>
+        <h2 id='username'><em>{{ profile_user.user.username }}</em></h2>
+        <h3 id='pronouns'>{{ profile_user.pronouns }}</h3>
+      </div>
+
+      <div class='bio_info'>
+        <p id='bio'>{{ profile_user.bio }}</p>
+    </div>
+  </div>
   {% else %}
     <h1>User not found.</h1>
   {% endif %}

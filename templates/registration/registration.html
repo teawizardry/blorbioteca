@@ -16,23 +16,19 @@
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->
 
-{% extends 'base.html' %}
+{% extends 'two_factor/_base_focus.html' %}
+{% load i18n %}
+{% load two_factor_tags %}
 
-{% block title %}Blorbioteca{% endblock %}
-
-{% block content %}
-{% comment %} main pic {% endcomment %}
-<div id='home-buttons'>
-    <form action={% url 'home' %}>
-        <button type='submit'>Enter the Stacks</button>
-    </form>
-    <form action={% url 'two_factor:login' %}>
-        <button type='submit'>Library Card</button>
-    </form>
-    <form action={% url 'about' %}>
-        <button type='submit'>Info Desk</button>
-    </form>
-</div>
-<p id='home-blurb'><em>A free and open source character and world repository.</em></p>
+{% block extra_media %}
+  {{ form.media }}
 {% endblock %}
 
+{% block content %}
+  <h1>{% block title %}{% trans 'Register Account' %}{% endblock %}</h1>
+  <form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Register Account</button>
+  </form>
+{% endblock %}

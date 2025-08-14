@@ -77,8 +77,20 @@
       </div>
 
       <div class='bio_info'>
-        <p id='bio'>{{ profile_user.bio }}</p>
-    </div>
+        <p id='bio'>{{ profile_user.bio|safe }}</p>
+      </div>
+      {% if user.id == profile_user.user.id %}
+        <form action={% url 'new-character' %} class='inline-edit-form'>
+            <button type='submit'>New Character</button>
+        </form>
+      {% endif %}
+      <div class='sheet-list'>
+        <h1 id='name'><strong>Character Gallery</strong></h1>
+        {% for character in characters %}
+        <a href={% url 'character-sheet' pk=character.id %}>{{ character.name }}</a>
+        <br>
+        {% endfor %}
+      </div>
   </div>
   {% else %}
     <h1>User not found.</h1>

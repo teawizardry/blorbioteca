@@ -24,14 +24,11 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Edit Your Profile</h1>
+  <h1>Edit Your Character</h1>
   <form method='post' enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type='submit'>Save Changes</button>
-  </form>
-  <form action={% url 'two_factor:profile' %}>
-    <button type='submit'>Account Security</button>
   </form>
 {% endblock %}
 

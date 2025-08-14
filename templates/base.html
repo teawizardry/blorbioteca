@@ -25,23 +25,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Blorbioteca{% endblock %}</title>
-  
-  <!-- set theme immediately to prevent flash -->
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'theme-dark';
-      document.documentElement.className = theme;
-      
-      // Set inline styles immediately
-      const html = document.documentElement;
-      if (theme === 'theme-light') {
-        html.style.backgroundColor = '#f2ecbc';
-      } else {
-        html.style.backgroundColor = '#181616';
-      }
-    })();
-  </script>
-  
   <link rel='stylesheet' type='text/css' href="{% static 'css/base.css' %}">
   {% block extra_css %}{% endblock %}
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
@@ -67,7 +50,8 @@
       {% else %}
       <a href={% url 'two_factor:login' %}>Log In</a>
       {% endif %}
-      <button id="theme-switcher" onclick="toggleTheme()">Switch Theme</button>
+      <input type='checkbox' id='theme-toggle' class='theme-toggle'>
+      <label for='theme-toggle' class='theme-toggle-label'></label>
     </div>
   </header>
   <main>
@@ -78,7 +62,6 @@
     <p><a target='_blank' rel='noopener noreferrer' href='https://github.com/teawizardry/blorbioteca'><i class='nf nf-dev-github'></i></a></p>
     <p>Licensed under the <a target='_blank' rel='noopener noreferrer' href='https://www.gnu.org/licenses/gpl-3.0.en.html'>GPLv3</a></p>
   </footer>
-<script src="{% static 'js/theme-switcher.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </body>
 

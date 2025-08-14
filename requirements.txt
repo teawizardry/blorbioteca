@@ -7,12 +7,15 @@ Django==5.2.5
 django-formtools==2.5.1
 django-otp==1.6.1
 django-phonenumber-field==8.1.0
+django-social-links-field==0.1.6
+django-tinymce==4.1.0
 django-two-factor-auth==1.17.0
 phonenumberslite==8.13.55
 pillow==11.3.0
 pycparser==2.22
 pyOpenSSL==25.1.0
 pypng==0.20220715.0
+python-dotenv==1.1.1
 qrcode==7.4.2
 sqlparse==0.5.3
 typing_extensions==4.14.1

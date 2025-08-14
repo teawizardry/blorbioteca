@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'two_factor.plugins.email',
     'two_factor.plugins.webauthn',
     'social_links_field',
+    'tinymce',
     'accounts',
     'sheets',
 ]
@@ -145,7 +146,24 @@ SOCIAL_LINKS_FIELD_MEDIA_TYPES = [
     ('website', 'Website'),
 ]
 
+TINYMCE_DEFAULT_CONFIG = {
+    'height': 500,
+    'width': '100%',
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 20,
+    'selector': 'textarea',
+    'theme': 'silver',
+    'skin': 'oxide-dark',
+    'plugins': 'accordion,advlist,anchor,autolink,autosave,charmap,code,emoticons,fullscreen,link,lists,preview,searchreplace,table,visualchars,wordcount',
+    'toolbar': 'undo redo | bold italic underline strikethrough | bullist numlist | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent | fullscreen preview save | charmap emoticons',
+    'toolbar_mode': 'floating',
+    'menubar': True,
+    'statusbar': True,
+    'promotion': False,
+}
 
+TINYMCE_JS_ROOT = '.venv/lib/python3.11/site-packages/tinymce/static/tinymce/'
+TINYMCE_COMPRESSOR = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

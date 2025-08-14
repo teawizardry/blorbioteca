@@ -1,0 +1,49 @@
+<!--
+  Blorbioteca is a free and open source character and world repository.
+  Copyright (C) 2025 Hannah Kirkland
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if character %}
+  <div class='profile'>
+    <div class='sidebar_container'>
+    {% comment %} pfp image here {% endcomment %}
+    <div id='sidebar'>{{ character.sidebar|safe }}</div>
+    </div>
+    <div class='profile_container'>
+      <div class='name_info'>
+        <div class='name_header'>
+          <h1 id='name'><strong>{{ character.name }}</strong></h1>
+          {% if user.is_authenticated %}
+            {% if user.id == character.user.id %}
+              <form action={% url 'edit-character' pk=character.pk %}? class='inline-edit-form'>
+                  <button type='submit'>Edit</button>
+              </form>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class='bio_info'>
+        <div id='bio'>{{ character.bio|safe }}</div>
+    </div>
+  </div>
+  {% else %}
+    <h1>Character not found.</h1>
+  {% endif %}
+{% endblock %}

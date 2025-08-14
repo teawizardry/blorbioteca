@@ -17,15 +17,15 @@
 '''
 
 from django.shortcuts import render, redirect
-from .forms import UserRegistrationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django_otp.plugins.otp_totp.models import TOTPDevice
 from django.contrib.auth import get_user_model
-from .forms import EditProfile
+from .forms import UserRegistrationForm, EditProfile
 from .models import UserProfile
+from sheets.models import CharacterSheet
 import re
 
 class Registration(CreateView):
@@ -47,14 +47,16 @@ def login_redirect(request):
 def user_profile(request, username):
     # allow only alphanumeric, underscore, hyphen, and dot in username for url safety
     if not re.fullmatch(r'[\w.-]+', username):
-        return render(request, 'registration/profile.html', {'profile_user': None, 'invalid_username': True})
+        return render(request, 'registration/profile.html', {'profile_user': None, 'characters': None, 'invalid_username': True})
     User = get_user_model()
     user = get_object_or_404(User, username=username)
     try:
         user_profile = UserProfile.objects.get(user=user)
     except:
         user_profile = None
-    return render(request, 'registration/profile.html', {'profile_user': user_profile, 'invalid_username': False})
+        
+    characters = CharacterSheet.objects.filter(user=user)
+    return render(request, 'registration/profile.html', {'profile_user': user_profile, 'characters': characters, 'invalid_username': False})
 
 
 @login_required

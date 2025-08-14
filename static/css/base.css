@@ -23,7 +23,9 @@
     Color schemes are based on Kanagawa Dragon and Lotus. 
     https://github.com/rebelot/kanagawa.nvim 
 */
-.theme-dark {
+
+/* dark theme */
+:root {
     --bg-primary: #181616;
     --bg-secondary: #282727;
     --bg-tertiary: #393836;
@@ -43,7 +45,9 @@
     --button-hover: #2D4F67;
 }
 
-.theme-light {
+/* light theme - fallback using :has() and alternative approach */
+:root:has(#theme-toggle:checked),
+html:has(#theme-toggle:checked) {
     --bg-primary: #f2ecbc;
     --bg-secondary: #e7dba0;
     --bg-tertiary: #e4d794;
@@ -63,10 +67,43 @@
     --button-hover: #9fb5c9;
 }
 
+/* theme toggle button */
+.theme-toggle {
+    display: none;
+}
+
+.theme-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6.5px;
+    background-color: var(--button-bg);
+    color: var(--fg-primary);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    gap: 10px;
+}
+
+.theme-toggle-label:hover {
+    background-color: var(--button-hover);
+}
+
+.theme-toggle-label::before {
+    content: '🌙';
+    font-size: smaller;
+}
+
+#theme-toggle:checked + .theme-toggle-label::before {
+    content: '☀️';
+    font-size: smaller;
+}
+
 html {
     background-color: var(--bg-primary);
 }
 
+/* main stuff */
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;

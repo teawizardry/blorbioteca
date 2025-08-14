@@ -24,11 +24,11 @@ The goal of this project is to create an easy-to-use and robust character / worl
 ## Current Features
 - User accounts with 2fa
 - User profiles
+- Character sheets
 
 ## Future Features
 
 **Top Priority**
-- Character sheets
 - World sheets
 - Image uploads
 - Tagging system

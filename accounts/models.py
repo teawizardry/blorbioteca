@@ -20,6 +20,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from social_links_field.models import SocialLinksField
 from tinymce import models as tinymce_models
+from imagekit.models import ProcessedImageField
+from imagekit.processors import SmartResize
 
 class InviteCode(models.Model):
     code = models.CharField(max_length=20, unique=True)
@@ -40,5 +42,8 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=50, blank=True, null=True)
     pronouns = models.CharField(max_length=50, blank=True, null=True)
     bio = tinymce_models.HTMLField()
-    pfp = models.ImageField(blank=True)
+    pfp = ProcessedImageField(upload_to='avatars',
+                                processors=[SmartResize(150, 150)],
+                                format='webp',
+                                options={'quality': 75})
     social_links = SocialLinksField()

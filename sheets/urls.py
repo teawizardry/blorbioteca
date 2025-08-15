@@ -24,5 +24,5 @@ urlpatterns = [
     path('<int:pk>/', views.character_sheet, name='character-sheet'),
     path('<int:pk>/edit/', views.edit_character, name='edit-character'),
     path('new-character', views.new_character, name='new-character'),
-    # path('<int:pk>/delete/', views.delete_character, name='delete-character'),
+    path('<int:pk>/delete/', views.delete_character, name='delete-character'),
 ]

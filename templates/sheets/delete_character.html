@@ -18,20 +18,13 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_css %}
-{{ form.media }}
-<script src="{% static 'js/tinymce_themer.js' %}" defer></script> 
-{% endblock %}
-
 {% block content %}
-  <h1>Edit Your Character</h1>
+  <h1>Delete {{ character.name }}?</h1>
+  <p>This action CANNOT be undone.</p>
   <form method='post' enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type='submit'>Save Changes</button>
-  </form>
-  <form action={% url 'delete-character' pk=character.pk %}? class='inline-edit-form'>
-      <button class='delete' type='submit'>DELETE</button>
+    <button type='submit'>DELETE</button>
   </form>
 {% endblock %}
 

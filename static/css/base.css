@@ -170,6 +170,11 @@ footer {
 }
 
 /* buttons */
+.delete {
+    filter: hue-rotate(140deg) brightness(1.5);
+    margin: 5px;
+}
+
 button{
     background-color: var(--button-bg);
     color: var(--fg-primary);

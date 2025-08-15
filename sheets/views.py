@@ -22,7 +22,8 @@ from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django_otp.plugins.otp_totp.models import TOTPDevice
 from django.contrib.auth import get_user_model
-from .forms import CharacterSheetForm
+from django.contrib import messages
+from .forms import CharacterSheetForm, CharacterDeleteForm
 from .models import CharacterSheet
 
 @login_required
@@ -53,4 +54,24 @@ def edit_character(request, pk):
             return redirect('character-sheet', character.pk)
     else:
         form = CharacterSheetForm(instance=character)
-    return render(request, 'sheets/edit_character.html', {'form': form})
+    return render(request, 'sheets/edit_character.html', {'form': form, 'character': character})
+
+@login_required
+def delete_character(request, pk):
+    user = request.user
+    character = CharacterSheet.objects.get(pk=pk, user=user)
+    if user.id != character.user.id:
+        return redirect('character-sheet', character.pk)
+    
+    if request.method == 'POST':
+        form = CharacterDeleteForm(character.name, request.POST)
+        if form['delete_confirmation'].value() == 'DELETE':
+            character.delete()
+            messages.info(request, f'{character.name} deleted successfully.')
+            return redirect('user-profile', user.username)
+        else:
+            form.add_error('delete_confirmation', f'{character.name} was NOT deleted.')
+            return redirect('character-sheet', character.pk)
+    else:
+        form = CharacterDeleteForm(character.name, request.POST)
+    return render(request, 'sheets/delete_character.html', {'form': form, 'character': character})

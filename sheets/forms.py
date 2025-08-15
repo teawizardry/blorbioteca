@@ -17,6 +17,7 @@
 '''
 
 from django import forms
+from django.db import models
 from tinymce.widgets import TinyMCE
 from .models import CharacterSheet
 
@@ -24,3 +25,10 @@ class CharacterSheetForm(forms.ModelForm):
     class Meta:
         model = CharacterSheet
         fields = ['name', 'bio', 'sidebar']
+        
+class CharacterDeleteForm(forms.Form):
+    def __init__(self,name,*args,**kwargs):
+        super(CharacterDeleteForm,self).__init__(*args,**kwargs)
+        self.fields['delete_confirmation'] = forms.CharField(max_length = 100, widget = forms.TextInput(attrs = {'placeholder': f"Type 'DELETE' to PERMANENTLY delete {name}."}), help_text = f"Type 'DELETE' to PERMANENTLY delete {name}.")
+
+    delete_confirmation = forms.CharField()

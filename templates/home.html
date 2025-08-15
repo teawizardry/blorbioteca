@@ -17,11 +17,12 @@
 -->
 
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Blorbioteca{% endblock %}
 
 {% block content %}
-{% comment %} main pic {% endcomment %}
+<img id='landing-image' src="{% static 'landing_page.png' %}" alt='Blorbioteca landing page image of a bookshelf'>
 <div id='home-buttons'>
     <form action={% url 'home' %}>
         <button type='submit'>Enter the Stacks</button>

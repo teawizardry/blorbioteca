@@ -133,6 +133,11 @@ footer {
 }
 
 /* home screen stuff */
+#landing-image {
+    width: 100%;
+    height: auto;
+}
+
 #home-buttons {
     padding: 10px;
     display: flex;

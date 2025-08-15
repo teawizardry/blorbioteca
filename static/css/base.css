@@ -111,10 +111,15 @@ body {
     line-height: 1.6;
     background-color: var(--bg-primary);
     color: var(--fg-primary);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
     min-height: fit-content;
+    align-self: center;
     padding: 20px;
     background-color: var(--bg-primary);
     display: block;
@@ -128,7 +133,6 @@ footer {
     color: var(--fg-secondary);
     text-align: center;
     padding: 20px;
-    margin-top: auto;
     border-top: 1px solid var(--bg-tertiary);
 }
 

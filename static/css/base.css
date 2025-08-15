@@ -26,45 +26,45 @@
 
 /* dark theme */
 :root {
-    --bg-primary: #181616;
-    --bg-secondary: #282727;
-    --bg-tertiary: #393836;
-    --bg-float: #0d0c0c;
-    --fg-primary: #c5c9c5;
-    --fg-secondary: #C8C093;
+    --bg-primary: #1B1B1B;
+    --bg-secondary: #343434;
+    --bg-tertiary: #3D3D3D;
+    --bg-float: #0e0e0e;
+    --fg-primary: #CCCCCC;
+    --fg-secondary: #FFE699;
     --fg-dim: #737c73;
-    --accent-blue: #8ba4b0;
-    --accent-purple: #8992a7;
-    --accent-red: #c4746e;
-    --accent-green: #8a9a7b;
-    --accent-yellow: #c4b28a;
-    --accent-orange: #b6927b;
-    --accent-teal: #8ea4a2;
-    --menu-bg: #625e5a;
-    --button-bg: #223249;
-    --button-hover: #2D4F67;
+    --accent-blue: #90BBD5;
+    --accent-purple: #9682C9;
+    --accent-red: #EE6D73;
+    --accent-green: #8A9A5B;
+    --accent-yellow: #FFE699;
+    --accent-orange: #D99058;
+    --accent-teal: #29AB87;
+    --menu-bg: #555555;
+    --button-bg: #1E2952;
+    --button-hover: #2E4560;
 }
 
 /* light theme - fallback using :has() and alternative approach */
 :root:has(#theme-toggle:checked),
 html:has(#theme-toggle:checked) {
-    --bg-primary: #f2ecbc;
-    --bg-secondary: #e7dba0;
-    --bg-tertiary: #e4d794;
-    --bg-float: #d5cea3;
-    --fg-primary: #545464;
-    --fg-secondary: #43436c;
+    --bg-primary: #F5F5F5;
+    --bg-secondary: #D6D6D6;
+    --bg-tertiary: #EBEBEB;
+    --bg-float: #F5F5F5;
+    --fg-primary: #333333;
+    --fg-secondary: #AE7F0A;
     --fg-dim: #8a8980;
-    --accent-blue: #4d699b;
-    --accent-purple: #624c83;
-    --accent-red: #c84053;
-    --accent-green: #6f894e;
-    --accent-yellow: #77713f;
-    --accent-orange: #cc6d00;
-    --accent-teal: #597b75;
-    --menu-bg: #c9cbd1;
-    --button-bg: #b5cbd2;
-    --button-hover: #9fb5c9;
+    --accent-blue: #4682B4;
+    --accent-purple: #645394;
+    --accent-red: #BF4F51;
+    --accent-green: #6C7C59;
+    --accent-yellow: #C19A6B;
+    --accent-orange: #926644;
+    --accent-teal: #49796B;
+    --menu-bg: #BEBFC5;
+    --button-bg: #CCDBE0;
+    --button-hover: #B1C2D3;
 }
 
 /* theme toggle button */
@@ -77,12 +77,15 @@ html:has(#theme-toggle:checked) {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 6.5px;
-    background-color: var(--button-bg);
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(---bg-secondary);
     color: var(--fg-primary);
-    border-radius: 4px;
     transition: all 0.2s ease;
     gap: 10px;
+    margin-left: auto;
 }
 
 .theme-toggle-label:hover {
@@ -133,7 +136,6 @@ footer {
     color: var(--fg-secondary);
     text-align: center;
     padding: 20px;
-    border-top: 1px solid var(--bg-tertiary);
 }
 
 /* home screen stuff */
@@ -163,8 +165,8 @@ footer {
 
 /* menu */
 .menu {
-    background-color: var(--menu-bg);
-    padding: 10px;
+    background-color: var(--bg-secondary);
+    padding: 0px;
     margin-bottom: 20px;
     display: flex;
     gap: 10px;
@@ -178,9 +180,14 @@ footer {
     border: hidden;
 }
 
+.menu button {
+    border-radius: 0px;
+    background-color: var(--bg-secondary);
+}
+
 /* buttons */
 .delete {
-    filter: hue-rotate(140deg) brightness(1.5);
+    filter: hue-rotate(130deg) brightness(1.5);
     margin: 5px;
 }
 
@@ -275,7 +282,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--bg-secondary);
-    border-radius: 8px;
     overflow: hidden;
     border: hidden;
 }
@@ -283,13 +289,12 @@ table {
 th, td {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid var(--bg-tertiary);
 }
 
 th {
     background-color: var(--bg-tertiary);
-    color: var(--fg-primary);
-    font-weight: 600;
+    color: var(--accent-purple);
+    font-weight: 800;
 }
 
 /* scrollbar */
@@ -329,7 +334,6 @@ th {
     background-color: var(--accent-purple);
     color: var(--bg-primary);
     padding: 10px;
-    border-radius: 8px;
     border: hidden;
 }
 
